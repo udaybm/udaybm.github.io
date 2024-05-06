@@ -16,7 +16,7 @@
 
     <!-- Add a button to trigger the JavaScript function from encblynk.js -->
 	
-    <button onclick="encryptPassword()">Encrypt Password</button>
+    <!--button onclick="encryptPassword()">Encrypt Password</button-->
 
     <!-- Display input fields for email and password -->
     <label for="email">Email:</label>
@@ -26,7 +26,7 @@
     <input type="password" id="password" value="password"><br>
 	
 	<script>
-		const urlParams = new URLSearchParams(window.location.search);
+	const urlParams = new URLSearchParams(window.location.search);
         const emailFromUrl = urlParams.get('email');
         const passwordFromUrl = urlParams.get('password');
 
@@ -59,8 +59,8 @@
 			// Send the encrypted password to Thunkable
             window.parent.postMessage(final, '*'); // Send message to parent (Thunkable)
         }
-		//call the function directly without button onclick haer:comment onlick for this.
-		//encryptPassword()
+	//call the function directly without button onclick here:comment onlick for this.
+	encryptPassword()
     </script>	
 </body>
 </html>
