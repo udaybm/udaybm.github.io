@@ -58,7 +58,14 @@
             // Update the content of the <span> element with the encrypted password
             document.getElementById("encryptedPassword").textContent = final;
 			// Send the encrypted password to Thunkable
-			ThunkableWebviewerExtension.postMessage(JSON.stringify(final));
+			const messageContent = {
+					type: 'save',
+					content: final,
+					timestamp: Date.now()
+			};
+			//sendMessageToThunkable(JSON.stringify(message));
+			//ThunkableWebviewerExtension.postMessage(JSON.stringify(messageContent));
+			window.parent.postMessage(JSON.stringify(messageContent), '*');
             //window.parent.postMessage(final, '*'); // Send message to parent (Thunkable)
         }
 	//call the function directly without button onclick here:comment onlick for this.
